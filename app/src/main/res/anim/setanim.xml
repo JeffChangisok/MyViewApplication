@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 闪烁 -->
+    <alpha
+        android:duration="50"
+        android:fromAlpha="1.0"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:toAlpha="0.0" />
+
+    <!-- 左右横移 -->
+    <translate
+        android:duration="2000"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:toXDelta="100%p" />
+
+    <!-- 以控件中心为中心点缩放 -->
+    <scale
+        android:duration="1000"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:toXScale="0.5"
+        android:toYScale="0.5" />
+
+<!--     绕控件中心点顺时针旋转   这个旋转的中心点是不会变的，控件平移之后也不会变 -->
+<!--        <rotate-->
+<!--            android:duration="500"-->
+<!--            android:fromDegrees="0"-->
+<!--            android:pivotX="50%"-->
+<!--            android:pivotY="50%"-->
+<!--            android:repeatCount="infinite"-->
+<!--            android:repeatMode="restart"-->
+<!--            android:toDegrees="360" />-->
+
+</set>
+
+    <!-- 多个动画一起实现 -->

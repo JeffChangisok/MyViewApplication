@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="0"
+    android:toXDelta="150"
+    android:fromYDelta="0"
+    android:toYDelta="300"
+    android:duration="2000"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"
+    />
+
+<!-- 位移 delta属性也是三种方式赋值：50、50%、50%p -->

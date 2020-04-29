@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="270"
+    android:duration="2000"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"
+    />
+
+<!-- pivotX/Y 旋转中心点偏移量，默认是左上角 -->

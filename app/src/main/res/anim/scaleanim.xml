@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="1.0"
+    android:toXScale="2.0"
+    android:fromYScale="1.0"
+    android:toYScale="2.0"
+    android:duration="2000"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"/>
+
+    <!--
+     fromXScale  在x轴方向上的缩放倍率
+     pivotX 枢轴、支点偏移量 缩放动画起始位置X轴的坐标，默认点是在左上角。注意是动画起始位置，就是以这个点为基准缩放。控制的是这动画起始点的位置
+            数值50：+50px
+            百分数50%：+自己宽度
+            百分数50%p：+父控件宽度
+     duration  持续时间
+     fillAfter  动画结束时，保持动画结束时的状态
+     fillBefore/fillEnabled  动画结束时，保持动画开始时的状态
+     repeatCount 动画重复次数 infinite为无限
+     repeatMode 重复类型
+                reverse 倒序回放
+                restart 重放
+     interpolator 指定动画效果
+     -->

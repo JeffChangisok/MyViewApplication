@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleView">
+        <!-- dimension:尺寸  reference:资源Id -->
+        <attr name="circle_color" format="color"/>
+    </declare-styleable>
+</resources>
