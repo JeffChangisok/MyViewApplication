@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewanimation.AnimationCodeActivity">
+
+    <ImageView
+        android:id="@+id/imgLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_scan" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_scan" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_scan" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_scan" />
+
+    <Button
+        android:id="@+id/btnSetAnim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tvAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="alpha" />
+
+    <TextView
+        android:id="@+id/tvRotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@color/colorPrimary"
+        android:text="rotate" />
+
+    <TextView
+        android:id="@+id/tvTranslate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:background="@color/colorPrimary"
+        android:text="translate" />
+
+    <TextView
+        android:id="@+id/tvScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary"
+        android:text="Hello World!" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="#FF0000" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FF0000" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="#FF0000" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="#FF0000" />
+
+</RelativeLayout>

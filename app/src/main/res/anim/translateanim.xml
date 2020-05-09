@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fromXDelta="0"
-    android:toXDelta="150"
-    android:fromYDelta="0"
-    android:toYDelta="300"
     android:duration="2000"
+    android:fromXDelta="0"
+    android:fromYDelta="0"
+    android:interpolator="@android:anim/bounce_interpolator"
     android:repeatCount="infinite"
     android:repeatMode="reverse"
-    />
+    android:toXDelta="150"
+    android:toYDelta="300" />
 
-<!-- 位移 delta属性也是三种方式赋值：50、50%、50%p -->
+    <!-- 位移 delta属性也是三种方式赋值：50、50%、50%p -->
+    <!-- 插值器：动画结束时像小球落地一样回弹 -->

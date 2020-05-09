@@ -1,9 +1,14 @@
-package com.example.myviewapplication;
+package com.example.myviewapplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.myviewapplication.R;
+
+/**
+ * 绘图基础
+ */
 public class BaseDrawActivity extends AppCompatActivity {
 
     @Override
