@@ -11,4 +11,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btnRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pause listener"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:id="@+id/imgChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/q1"
+        android:layout_below="@id/btnRemove"
+        android:layout_alignEnd="@id/btnRemove"
+        />
+
+    <com.example.myviewapplication.propertyanimation.ChangeImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/q1"
+        android:layout_centerInParent="true"/>
+
 </RelativeLayout>
