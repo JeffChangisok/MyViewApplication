@@ -12,7 +12,7 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnRemove"
+        android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="pause listener"
@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/q1"
-        android:layout_below="@id/btnRemove"
-        android:layout_alignEnd="@id/btnRemove"
+        android:layout_below="@id/btnPause"
+        android:layout_alignEnd="@id/btnPause"
         />
 
     <com.example.myviewapplication.propertyanimation.ChangeImageView

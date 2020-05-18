@@ -30,7 +30,7 @@ class ChangeImageView(context: Context, attrs: AttributeSet) : AppCompatImageVie
     private fun init(){
         var count = 1
         var num = 2
-        val valueAnimator = ValueAnimator.ofInt(0,400)
+        val valueAnimator = ValueAnimator.ofInt(0,400) //动画区间值0-400
         valueAnimator.duration = 3000
         valueAnimator.repeatMode = ValueAnimator.REVERSE
         valueAnimator.repeatCount = ValueAnimator.INFINITE

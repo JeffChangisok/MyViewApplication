@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import com.example.myviewapplication.viewanimation.AnimationCodeActivity
 import com.example.myviewapplication.viewanimation.AnimationTestActivity
 import com.example.myviewapplication.activity.BaseDrawActivity
+import com.example.myviewapplication.kotlin.KotlinTestActivity
 import com.example.myviewapplication.propertyanimation.ValueAnimatorActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -35,6 +35,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     //在xml中引用
-    fun baseDraw(view: View) = to(BaseDrawActivity::class.java)
-    fun animationTest(view: View) = to(AnimationTestActivity::class.java)
+    fun kotlinTest(view: View) =  to(KotlinTestActivity::class.java)
 }

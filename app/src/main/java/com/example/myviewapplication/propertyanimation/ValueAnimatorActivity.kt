@@ -24,7 +24,7 @@ class ValueAnimatorActivity : AppCompatActivity() {
             valueAnimator.resume()
             Toast.makeText(this, "click me!", Toast.LENGTH_SHORT).show()
         }
-        btnRemove.setOnClickListener {
+        btnPause.setOnClickListener {
             valueAnimator.pause()
 //            valueAnimator.removeAllUpdateListeners()
         }
@@ -67,6 +67,7 @@ class ValueAnimatorActivity : AppCompatActivity() {
     }
 
 
+    var first = true
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         /*
@@ -74,10 +75,29 @@ class ValueAnimatorActivity : AppCompatActivity() {
          * Activity初始化完毕准备显示的时候就会回调该方法。
          * 所以说，只要想做一些Activity加载完毕就马上触发的事情，都可以在这里执行。
          */
-        changePicAnim()
+        if (first) {
+            changePicAnim()
+            first = false
+        }
+        myInterpolatorTest()
     }
 
     private val picValueAnimator = ValueAnimator.ofInt(0, 400)
+
+    private fun myInterpolatorTest() {
+        val myValueAnimator = ValueAnimator.ofInt(100, 400)
+        myValueAnimator.duration = 2000
+        myValueAnimator.repeatCount = 1
+        myValueAnimator.interpolator = MyInterpolator()
+        myValueAnimator.addUpdateListener { animation ->
+            /*
+             * animatedValue = 100 + （400 - 100）* 显示进度
+             */
+            val curValue = animation.animatedValue as Int
+            btnPause.layout(btnPause.left, curValue, btnPause.right, btnPause.height + curValue)
+        }
+        myValueAnimator.start()
+    }
 
     private fun changePicAnim() {
         picValueAnimator.duration = 3000
