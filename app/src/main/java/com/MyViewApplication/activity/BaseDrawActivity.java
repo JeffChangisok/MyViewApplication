@@ -1,13 +1,10 @@
-package com.example.myviewapplication.activity;
+package com.MyViewApplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.myviewapplication.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.MyViewApplication.R;
 
 /**
  * 绘图基础
@@ -20,16 +17,13 @@ public class BaseDrawActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_draw);
 
-
         boolean living = true;
-
 
         while (living) {
             People people = meetPeople();
             people.love = "the one".equals(findHer(people.name));
             //曾经沧海难为水，除却巫山不是云
         }
-
     }
 
     People meetPeople() {

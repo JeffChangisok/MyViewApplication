@@ -1,4 +1,4 @@
-package com.example.myviewapplication.propertyanimation
+package com.MyViewApplication.PropertyAnimation.ValueAnimator
 
 import android.animation.TimeInterpolator
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".propertyanimation.ValueAnimatorActivity">
+    tools:context=".PropertyAnimation.ValueAnimator.ValueAnimatorActivity">
 
     <Button
         android:id="@+id/btn1"
@@ -12,11 +12,32 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn1"
+        android:text="Evaluator 测试"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="颜色测试"
+        android:layout_below="@id/btn2"/>
+
+    <Button
         android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="pause listener"
         android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插值器测试"
+        android:layout_centerHorizontal="true"/>
 
     <ImageView
         android:id="@+id/imgChange"
@@ -27,7 +48,18 @@
         android:layout_alignEnd="@id/btnPause"
         />
 
-    <com.example.myviewapplication.propertyanimation.ChangeImageView
+    <TextView
+        android:id="@+id/tvNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/img"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+    <com.MyViewApplication.PropertyAnimation.ValueAnimator.ChangeImageView
+        android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/q1"

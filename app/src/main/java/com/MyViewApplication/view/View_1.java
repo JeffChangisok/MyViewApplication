@@ -1,4 +1,4 @@
-package com.example.myviewapplication.view;
+package com.MyViewApplication.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,8 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Region;
-import android.graphics.RegionIterator;
 import android.util.AttributeSet;
 import android.view.View;
 

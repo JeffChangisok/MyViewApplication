@@ -1,4 +1,4 @@
-package com.example.myviewapplication.propertyanimation
+package com.MyViewApplication.PropertyAnimation.ValueAnimator
 
 import android.animation.Animator
 import android.animation.ValueAnimator
@@ -17,6 +17,9 @@ class ChangeImageView(context: Context, attrs: AttributeSet) : AppCompatImageVie
     private var mTop = 0
     private var mBottom = 0
 
+    /**
+     * ChangeImageView的构造方法
+     */
     init {
         init()
     }
@@ -49,14 +52,11 @@ class ChangeImageView(context: Context, attrs: AttributeSet) : AppCompatImageVie
                 }
             }
 
-            override fun onAnimationEnd(animation: Animator?) {
-            }
+            override fun onAnimationEnd(animation: Animator?) {}
 
-            override fun onAnimationCancel(animation: Animator?) {
-            }
+            override fun onAnimationCancel(animation: Animator?) {}
 
-            override fun onAnimationStart(animation: Animator?) {
-            }
+            override fun onAnimationStart(animation: Animator?) {}
         })
         valueAnimator.start()
 

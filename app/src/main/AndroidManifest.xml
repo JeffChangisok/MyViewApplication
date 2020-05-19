@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myviewapplication">
+    package="com.MyViewApplication">
 
     <application
         android:allowBackup="@mipmap/ic_launcher"
@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kotlin.KotlinTestActivity"/>
-        <activity android:name=".propertyanimation.ValueAnimatorActivity" />
-        <activity android:name=".viewanimation.AnimationCodeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.MyViewApplication.kotlin.KotlinTestActivity"/>
+        <activity android:name="com.MyViewApplication.PropertyAnimation.ValueAnimator.ValueAnimatorActivity" />
+        <activity android:name="com.MyViewApplication.viewanimation.AnimationCodeActivity" />
+        <activity android:name="com.MyViewApplication.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BaseDrawActivity">
+        <activity android:name="com.MyViewApplication.activity.BaseDrawActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".viewanimation.AnimationTestActivity" />
+        <activity android:name="com.MyViewApplication.viewanimation.AnimationTestActivity" />
     </application>
 
 </manifest>

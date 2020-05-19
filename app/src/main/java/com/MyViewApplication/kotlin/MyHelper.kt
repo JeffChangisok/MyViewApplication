@@ -1,4 +1,4 @@
-package com.example.myviewapplication.kotlin
+package com.MyViewApplication.kotlin
 
 import android.util.Log
 

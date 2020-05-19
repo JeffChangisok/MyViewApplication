@@ -1,18 +1,21 @@
-package com.example.myviewapplication.propertyanimation
+package com.MyViewApplication.PropertyAnimation.ValueAnimator
 
 import android.animation.Animator
+import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
-import com.example.myviewapplication.R
+import com.MyViewApplication.R
 import kotlinx.android.synthetic.main.activity_value_animator.*
 
 /**
  * Created by Jeff on 2020/5/8.
  * 属性动画之ValueAnimator
+ * 插值器改变动画的快慢、Evaluator可以改变返回的值甚至类型
+ * Evaluator和ofObject结合可以使ValueAnimator更加强大，使参数可在Evaluator中处理，并可返回自定义对象
  **/
 class ValueAnimatorActivity : AppCompatActivity() {
 
@@ -28,9 +31,65 @@ class ValueAnimatorActivity : AppCompatActivity() {
             valueAnimator.pause()
 //            valueAnimator.removeAllUpdateListeners()
         }
+
+
+        //自定义Evaluator测试
+        btn2.setOnClickListener {
+            val valueAnimator = ValueAnimator.ofInt(0,400)
+            valueAnimator.duration = 3000
+            valueAnimator.setEvaluator(MyEvaluator())
+            val top = btn2.top
+            val bottom = btn2.bottom
+            valueAnimator.addUpdateListener {
+                val curValue = it.animatedValue as Int
+                btn2.layout(btn2.left, top + curValue, btn2.right,bottom + curValue)
+            }
+            valueAnimator.start()
+        }
+
+        //自定义插值器测试
+        btn3.setOnClickListener {
+            val myValueAnimator = ValueAnimator.ofInt(100, 400)
+            myValueAnimator.duration = 2000
+            myValueAnimator.repeatCount = 1 //重复次数，指另外多执行的次数
+            myValueAnimator.interpolator = MyInterpolator()
+            myValueAnimator.addUpdateListener { animation ->
+                /*
+                 * animatedValue = 100 + （400 - 100）* 显示进度
+                 */
+                val curValue = animation.animatedValue as Int
+                btn3.layout(btn3.left, curValue, btn3.right, btn3.height + curValue)
+            }
+            myValueAnimator.start()
+        }
+
+        //ArgbEvaluator测试
+        //好像其他ValueAnimator会等这个ValueAnimator结束之后才开始动？为什么？
+        btn4.setOnClickListener {
+            val valueAnimator = ValueAnimator.ofInt(0xff22c1c3.toInt(), 0xfffdbb2d.toInt())
+            valueAnimator.duration = 1000
+            valueAnimator.repeatCount = ValueAnimator.INFINITE
+            valueAnimator.repeatMode = ValueAnimator.REVERSE
+            valueAnimator.setEvaluator(ArgbEvaluator())
+            valueAnimator.addUpdateListener {
+                val curValue = it.animatedValue as Int
+                btn4.setBackgroundColor(curValue)
+            }
+            valueAnimator.start()
+        }
+
+        //ofObject测试
+        val valueAnimator = ValueAnimator.ofObject(MyCharEvaluator(),Character.valueOf('A'),Character.valueOf('Z'))
+        valueAnimator.duration = 5000
+        valueAnimator.interpolator = AccelerateDecelerateInterpolator()
+        valueAnimator.addUpdateListener {
+            val curValue = it.animatedValue as Char
+            tvNum.text = curValue.toString()
+        }
+        valueAnimator.start()
     }
 
-    private val valueAnimator = ValueAnimator.ofInt(0, 400) //动画值变化范围
+    private val valueAnimator = ValueAnimator.ofInt(0, 400) //动画值变化范围，ofInt函数会设置默认的插值器和Evaluator
     private fun doAnimation() {
         valueAnimator.duration = 3000
         valueAnimator.repeatCount = ValueAnimator.INFINITE //无限循环
@@ -74,30 +133,15 @@ class ValueAnimatorActivity : AppCompatActivity() {
          * 在Activity得到或者失去焦点的时候，就会被调用。
          * Activity初始化完毕准备显示的时候就会回调该方法。
          * 所以说，只要想做一些Activity加载完毕就马上触发的事情，都可以在这里执行。
+         * 这里有点显示BUG，放在点击事件里去执行比较好
          */
         if (first) {
             changePicAnim()
             first = false
         }
-        myInterpolatorTest()
     }
 
     private val picValueAnimator = ValueAnimator.ofInt(0, 400)
-
-    private fun myInterpolatorTest() {
-        val myValueAnimator = ValueAnimator.ofInt(100, 400)
-        myValueAnimator.duration = 2000
-        myValueAnimator.repeatCount = 1
-        myValueAnimator.interpolator = MyInterpolator()
-        myValueAnimator.addUpdateListener { animation ->
-            /*
-             * animatedValue = 100 + （400 - 100）* 显示进度
-             */
-            val curValue = animation.animatedValue as Int
-            btnPause.layout(btnPause.left, curValue, btnPause.right, btnPause.height + curValue)
-        }
-        myValueAnimator.start()
-    }
 
     private fun changePicAnim() {
         picValueAnimator.duration = 3000
