@@ -1,14 +1,14 @@
-package com.MyViewApplication
+package com.myviewapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.MyViewApplication.viewanimation.AnimationCodeActivity
-import com.MyViewApplication.viewanimation.AnimationTestActivity
-import com.MyViewApplication.activity.BaseDrawActivity
-import com.MyViewApplication.kotlin.KotlinTestActivity
-import com.MyViewApplication.PropertyAnimation.ValueAnimator.ValueAnimatorActivity
+import com.myviewapplication.viewanimation.AnimationCodeActivity
+import com.myviewapplication.viewanimation.AnimationTestActivity
+import com.myviewapplication.activity.BaseDrawActivity
+import com.myviewapplication.kotlin.KotlinTestActivity
+import com.myviewapplication.propertyanimation.valueanimator.ValueAnimatorActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {

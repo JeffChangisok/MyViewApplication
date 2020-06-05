@@ -1,4 +1,4 @@
-package com.MyViewApplication.view;
+package com.myviewapplication.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.MyViewApplication.R;
+import com.myviewapplication.R;
 
 import androidx.annotation.Nullable;
 

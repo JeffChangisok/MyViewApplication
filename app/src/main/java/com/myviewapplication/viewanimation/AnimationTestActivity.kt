@@ -1,11 +1,11 @@
-package com.MyViewApplication.viewanimation
+package com.myviewapplication.viewanimation
 
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.MyViewApplication.R
+import com.myviewapplication.R
 
 /**
  * Created by Jeff on 2020/4/28.

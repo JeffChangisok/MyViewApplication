@@ -1,4 +1,4 @@
-package com.MyViewApplication.PropertyAnimation.ValueAnimator
+package com.myviewapplication.propertyanimation.valueanimator
 
 import android.animation.Animator
 import android.animation.ArgbEvaluator
@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
-import com.MyViewApplication.R
+import com.myviewapplication.R
 import kotlinx.android.synthetic.main.activity_value_animator.*
 
 /**

@@ -1,10 +1,10 @@
-package com.MyViewApplication.viewanimation
+package com.myviewapplication.viewanimation
 
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.*
-import com.MyViewApplication.R
+import com.myviewapplication.R
 import kotlinx.android.synthetic.main.activity_animation_code.*
 import kotlinx.android.synthetic.main.activity_animation_code.btnSetAnim
 import kotlinx.android.synthetic.main.activity_animation_code.tvAlpha

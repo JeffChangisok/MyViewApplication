@@ -1,10 +1,10 @@
-package com.MyViewApplication.activity;
+package com.myviewapplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.MyViewApplication.R;
+import com.myviewapplication.R;
 
 /**
  * 绘图基础
@@ -22,7 +22,6 @@ public class BaseDrawActivity extends AppCompatActivity {
         while (living) {
             People people = meetPeople();
             people.love = "the one".equals(findHer(people.name));
-            //曾经沧海难为水，除却巫山不是云
         }
     }
 

@@ -1,9 +1,9 @@
-package com.MyViewApplication.kotlin
+package com.myviewapplication.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.MyViewApplication.R
+import com.myviewapplication.R
 import kotlinx.android.synthetic.main.activity_kotlin_test.*
 
 /**

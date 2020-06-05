@@ -1,4 +1,4 @@
-package com.MyViewApplication;
+package com.myviewapplication;
 
 import org.junit.Test;
 

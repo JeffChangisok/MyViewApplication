@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PropertyAnimation.ValueAnimator.ValueAnimatorActivity">
+    tools:context=".propertyanimation.valueanimator.ValueAnimatorActivity">
 
     <Button
         android:id="@+id/btn1"
@@ -58,7 +58,7 @@
 
 
 
-    <com.MyViewApplication.PropertyAnimation.ValueAnimator.ChangeImageView
+    <com.myviewapplication.propertyanimation.valueanimator.ChangeImageView
         android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
