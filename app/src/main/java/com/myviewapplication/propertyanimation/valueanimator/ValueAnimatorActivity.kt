@@ -35,14 +35,14 @@ class ValueAnimatorActivity : AppCompatActivity() {
 
         //自定义Evaluator测试
         btn2.setOnClickListener {
-            val valueAnimator = ValueAnimator.ofInt(0,400)
+            val valueAnimator = ValueAnimator.ofInt(0, 400)
             valueAnimator.duration = 3000
             valueAnimator.setEvaluator(MyEvaluator())
             val top = btn2.top
             val bottom = btn2.bottom
             valueAnimator.addUpdateListener {
                 val curValue = it.animatedValue as Int
-                btn2.layout(btn2.left, top + curValue, btn2.right,bottom + curValue)
+                btn2.layout(btn2.left, top + curValue, btn2.right, bottom + curValue)
             }
             valueAnimator.start()
         }
@@ -79,7 +79,7 @@ class ValueAnimatorActivity : AppCompatActivity() {
         }
 
         //ofObject测试
-        val valueAnimator = ValueAnimator.ofObject(MyCharEvaluator(),Character.valueOf('A'),Character.valueOf('Z'))
+        val valueAnimator = ValueAnimator.ofObject(MyCharEvaluator(), Character.valueOf('A'), Character.valueOf('Z'))
         valueAnimator.duration = 5000
         valueAnimator.interpolator = AccelerateDecelerateInterpolator()
         valueAnimator.addUpdateListener {

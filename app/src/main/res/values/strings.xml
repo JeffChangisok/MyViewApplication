@@ -4,6 +4,7 @@
     <string name="AnimationTest">视图动画_标签</string>
     <string name="AnimationCode">视图动画_代码</string>
     <string name="ValueAnimator">属性动画_ValueAnimator</string>
+    <string name="ObjectAnimator">属性动画_ObjectAnimator</string>
     <string name="Kotlin">kotlin</string>
     <string name="strNull">null</string>
     <string name="waiting">waiting…</string>

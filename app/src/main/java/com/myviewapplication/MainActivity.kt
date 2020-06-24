@@ -8,6 +8,7 @@ import com.myviewapplication.viewanimation.AnimationCodeActivity
 import com.myviewapplication.viewanimation.AnimationTestActivity
 import com.myviewapplication.activity.BaseDrawActivity
 import com.myviewapplication.kotlin.KotlinTestActivity
+import com.myviewapplication.propertyanimation.objectanimator.ObjectAnimatorActivity
 import com.myviewapplication.propertyanimation.valueanimator.ValueAnimatorActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnAnimationTest.setOnClickListener(this)
         btnAnimationCode.setOnClickListener(this)
         btnValueAnimator.setOnClickListener(this)
+        btnObjectAnimator.setOnClickListener(this)
     }
 
     private fun to(cls: Class<*>) = startActivity(Intent(this, cls))
@@ -30,10 +32,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnAnimationTest -> to(AnimationTestActivity::class.java)
             R.id.btnAnimationCode -> to(AnimationCodeActivity::class.java)
             R.id.btnValueAnimator -> to(ValueAnimatorActivity::class.java)
+            R.id.btnObjectAnimator -> to(ObjectAnimatorActivity::class.java)
         }
     }
 
 
     //在xml中引用
-    fun kotlinTest(view: View) =  to(KotlinTestActivity::class.java)
+    fun kotlinTest(view: View) = to(KotlinTestActivity::class.java)
 }

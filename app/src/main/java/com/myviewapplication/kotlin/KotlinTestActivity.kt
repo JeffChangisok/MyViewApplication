@@ -58,7 +58,7 @@ class KotlinTestActivity : AppCompatActivity() {
 
     }
 
-    public data class People(val name: String, var love: Boolean)
+    data class People(val name: String, var love: Boolean)
 
     /**
      * 标准函数with 需要接受一个类型的对象来作为第一个参数，返回lambda表达式中的最后一行代码
