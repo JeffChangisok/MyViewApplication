@@ -1,55 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_centerInParent="true">
+        tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/btnBaseDraw"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/BaseDraw"/>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnAnimationTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/AnimationTest"/>
+            <Button
+                android:id="@+id/btnBaseDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BaseDraw" />
 
-        <Button
-            android:id="@+id/btnAnimationCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/AnimationCode"/>
+            <Button
+                android:id="@+id/btnAnimationTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AnimationTest" />
 
-        <Button
-            android:id="@+id/btnValueAnimator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ValueAnimator" />
+            <Button
+                android:id="@+id/btnAnimationCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AnimationCode" />
 
-        <Button
-            android:id="@+id/btnObjectAnimator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ObjectAnimator" />
+            <Button
+                android:id="@+id/btnValueAnimator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ValueAnimator" />
 
-        <Button
-            android:id="@+id/btnKotlin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:onClick="kotlinTest"
-            android:text="@string/Kotlin"/>
+            <Button
+                android:id="@+id/btnObjectAnimator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ObjectAnimator" />
+
+            <Button
+                android:id="@+id/btnKotlin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:onClick="kotlinTest"
+                android:text="@string/Kotlin" />
+
+            <Button
+                android:id="@+id/btnFunTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test" />
+
+            <Button
+                android:id="@+id/btnVideoBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/VideoBanner" />
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
-
-
-</RelativeLayout>
+</layout>

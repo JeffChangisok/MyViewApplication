@@ -131,7 +131,7 @@ class KotlinTestActivity : AppCompatActivity() {
         student?.doSomething()
         student?.eatSomething()
 
-        //使用let函数，避免向上方一样重复进行非空判断
+        //使用let函数，避免重复进行非空判断
         student?.let { it ->
             //student对象会被传进来，名为it
             it.doSomething()

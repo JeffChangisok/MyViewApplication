@@ -1,2 +1,3 @@
+include ':benchmark2'
 include ':app'
 rootProject.name='MyViewApplication'

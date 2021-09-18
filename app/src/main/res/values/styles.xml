@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<!--    <style name="ActivityInOutAnimation" parent="android:Animation.Activity">-->
+<!--        <item name="android:activityOpenEnterAnimation">@anim/alpha_fade_in_slow</item>&lt;!&ndash; A进入B，B的动画 &ndash;&gt;-->
+<!--        <item name="android:activityOpenExitAnimation">@anim/alpha_fade_out</item>-->
+<!--        <item name="android:activityCloseExitAnimation">@anim/alpha_fade_out</item>-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/alpha_fade_in</item>-->
+<!--    </style>-->
+
+
+<!--    <style name="Theme_ActivityInOutAnimation" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="android:windowNoTitle">true</item>-->
+<!--        <item name="android:windowAnimationStyle">@style/ActivityInOutAnimation</item>-->
+<!--    </style>-->
+
+
+    <style name="Theme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar"/>
+
 </resources>
