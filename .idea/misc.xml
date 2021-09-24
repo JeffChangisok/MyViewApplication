@@ -8,10 +8,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MyViewApplication/app/src/main/res/drawable/circle_scan.xml" value="0.38229166666666664" />
+        <entry key="..\:/MyViewApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_base_draw.xml" value="0.2046875" />
         <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_kotlin_test.xml" value="0.2513586956521739" />
-        <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_main.xml" value="0.21920289855072464" />
+        <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_test_main.xml" value="0.21920289855072464" />
         <entry key="..\:/MyViewApplication/app/src/main/res/layout/activity_video_banner.xml" value="0.21920289855072464" />
+        <entry key="..\:/MyViewApplication/app/src/main/res/layout/fragment_test.xml" value="0.36614583333333334" />
+        <entry key="..\:/MyViewApplication/app/src/main/res/layout/item_test.xml" value="0.36614583333333334" />
         <entry key="..\:/MyViewApplication/app/src/main/res/layout/item_video_banner.xml" value="0.21920289855072464" />
       </map>
     </option>

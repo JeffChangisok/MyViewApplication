@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.tabs.TabLayoutMediator
 import com.myviewapplication.viewanimation.AnimationCodeActivity
 import com.myviewapplication.viewanimation.AnimationTestActivity
 import com.myviewapplication.activity.BaseDrawActivity
 import com.myviewapplication.databinding.ActivityMainBinding
+import com.myviewapplication.nestedscroll.TestFragment
+import com.myviewapplication.databinding.TestVP2Adapter
+import com.myviewapplication.databinding.TestVPAdapter
 import com.myviewapplication.kotlin.KotlinTestActivity
 import com.myviewapplication.propertyanimation.objectanimator.ObjectAnimatorActivity
 import com.myviewapplication.propertyanimation.valueanimator.ValueAnimatorActivity
@@ -18,21 +22,62 @@ import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG = "zhang"
+    private val titleArray = arrayOf("标签1", "标签2", "标签3", "标签4", "标签5", "标签6")
 
-    private lateinit var mBinding : ActivityMainBinding
+    private lateinit var mBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 //        mBinding.lifecycleOwner = this  //用处待研究
+        mBinding.listener = this
 
-        mBinding.btnBaseDraw.setOnClickListener(this)
-        mBinding.btnAnimationTest.setOnClickListener(this)
-        mBinding.btnAnimationCode.setOnClickListener(this)
-        mBinding.btnValueAnimator.setOnClickListener(this)
-        mBinding.btnObjectAnimator.setOnClickListener(this)
-        mBinding.btnFunTest.setOnClickListener(this)
-        mBinding.btnVideoBanner.setOnClickListener(this)
+        /**
+         * 使用CoordinatorLayout+AppbarLayout+Viewpager
+         */
+//        mBinding.tlTest.setupWithViewPager(mBinding.vpTest)
+//        mBinding.vpTest.apply {
+//            adapter = TestVPAdapter(
+//                supportFragmentManager,
+//                arrayListOf(
+//                    TestFragment(),
+//                    TestFragment(),
+//                    TestFragment(),
+//                    TestFragment(),
+//                    TestFragment(),
+//                    TestFragment()
+//                ),
+//                titleArray
+//            )
+//            offscreenPageLimit = 1
+//        }
+        /**
+         * 使用NestedScrollView+Viewpager2
+         */
+        mBinding.vp2Test.apply {
+            adapter = TestVP2Adapter(
+                supportFragmentManager,
+                arrayListOf(
+                    TestFragment(),
+                    TestFragment(),
+                    TestFragment(),
+                    TestFragment(),
+                    TestFragment(),
+                    TestFragment()
+                ),
+                lifecycle
+            )
+//            offscreenPageLimit = 3
+        }
+        TabLayoutMediator(mBinding.tlTest, mBinding.vp2Test) { tab, position ->
+            tab.text = titleArray[position]
+        }.attach()
+        mBinding.llTlVp.let {
+            it.post {
+                it.layoutParams.height = mBinding.nestedScrollView.measuredHeight
+                it.requestLayout()
+            }
+        }
     }
 
     private fun to(cls: Class<*>) = startActivity(Intent(this, cls))
@@ -53,18 +98,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun kotlinTest(view: View) = to(KotlinTestActivity::class.java)
 
     private fun funTest() {
-        val resourceTP = intArrayOf(5, 5, 5, 5, 5, 5, 5)
-        val heroList = ArrayList<Hero>()
-        for (i in resourceTP.indices) {
-            heroList.add(Hero(i, resourceTP[i]))
-        }
 
-        Log.d(TAG, "resource:")
-        showData(heroList)
-        bubbleSort(heroList)
-        Log.d(TAG, "bubbleSort:")
-        showData(heroList)
+//        val resourceTP = intArrayOf(5, 5, 5, 5, 5, 5, 5)
+//        val heroList = ArrayList<Hero>()
+//        for (i in resourceTP.indices) {
+//            heroList.add(Hero(i, resourceTP[i]))
+//        }
+//
+//        Log.d(TAG, "resource:")
+//        showData(heroList)
+//        bubbleSort(heroList)
+//        Log.d(TAG, "bubbleSort:")
+//        showData(heroList)
     }
+
 
     /**
      * 冒泡排序
@@ -74,7 +121,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             for (j in 0 until heroList.size - i - 1) {
                 if (heroList[j].tp > heroList[j + 1].tp) {
                     val tempTp = heroList[j]
-                    heroList[j]  = heroList[j + 1]
+                    heroList[j] = heroList[j + 1]
                     heroList[j + 1] = tempTp
                 }
             }
@@ -84,7 +131,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     /**
      * 快速排序
      */
-    private fun quickSort(heroList: ArrayList<Hero>){
+    private fun quickSort(heroList: ArrayList<Hero>) {
         var low = 0
         var high = heroList.size - 1
         var key = heroList[0].tp
