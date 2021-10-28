@@ -110,13 +110,13 @@
 <!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 
-    <com.myviewapplication.nestedscroll.HomeNestedScrollView
+    <com.myviewapplication.nestedscroll.MyNestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
 
-        <LinearLayout
+        <com.myviewapplication.nestedscroll.TestLinearlayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -184,6 +184,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/VideoBanner" />
+                <com.myviewapplication.view.myview
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:background="@color/alpha_25_black"/>
             </LinearLayout>
 
             <LinearLayout
@@ -205,8 +209,8 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+        </com.myviewapplication.nestedscroll.TestLinearlayout>
 
-    </com.myviewapplication.nestedscroll.HomeNestedScrollView>
+    </com.myviewapplication.nestedscroll.MyNestedScrollView>
 
 </layout>

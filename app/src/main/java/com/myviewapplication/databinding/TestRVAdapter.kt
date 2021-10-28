@@ -24,7 +24,7 @@ class TestRVAdapter : RecyclerView.Adapter<TestRVAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 20
+        return 16
     }
 
     class ViewHolder(private val viewDataBinding: ItemTestBinding) :

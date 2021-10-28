@@ -3,6 +3,8 @@ package com.myviewapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Message
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
@@ -13,7 +15,6 @@ import com.myviewapplication.activity.BaseDrawActivity
 import com.myviewapplication.databinding.ActivityMainBinding
 import com.myviewapplication.nestedscroll.TestFragment
 import com.myviewapplication.databinding.TestVP2Adapter
-import com.myviewapplication.databinding.TestVPAdapter
 import com.myviewapplication.kotlin.KotlinTestActivity
 import com.myviewapplication.propertyanimation.objectanimator.ObjectAnimatorActivity
 import com.myviewapplication.propertyanimation.valueanimator.ValueAnimatorActivity
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "0funTest: ${Thread.currentThread().id}")
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 //        mBinding.lifecycleOwner = this  //用处待研究
         mBinding.listener = this
@@ -97,7 +99,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     //在xml中引用
     fun kotlinTest(view: View) = to(KotlinTestActivity::class.java)
 
+    private val handler = Handler(Handler.Callback {
+        Log.d(TAG, "4funTest: ${Thread.currentThread().id}")
+        return@Callback false
+    })
     private fun funTest() {
+
+        Thread {
+            Log.d(TAG, "1funTest:子线程 ${Thread.currentThread().id}")
+            handler.post {
+                //这里的runnable运行的线程 取决于创建handler的线程
+                Log.d(TAG, "2funTest: ${Thread.currentThread().id}")
+            }
+            val handler2 = Handler()
+            handler2.post {
+                Log.d(TAG, "6funTest:子线程 ${Thread.currentThread().id}")
+            }
+        }.start()
+        Thread {
+            Log.d(TAG, "3funTest:子线程 ${Thread.currentThread().id}")
+            handler.sendMessage(Message())
+        }.start()
 
 //        val resourceTP = intArrayOf(5, 5, 5, 5, 5, 5, 5)
 //        val heroList = ArrayList<Hero>()
